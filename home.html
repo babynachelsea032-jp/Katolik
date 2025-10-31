@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Home - Katolik vs Ortodoks</title>
+<link rel="icon" type="image/png" href="download.png">
+<style>
+:root {
+    --coklat:#341c09;
+    --putih: #FFFFFF;
+    --krem: #F5E6D3;
+    --emas: #D4A017;
+    --abu: #F5F5F5;
+}
+
+* { 
+    margin:0; 
+    padding:0; 
+    box-sizing:border-box; 
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+}
+
+body { 
+    background-color: var(--abu); 
+    color: var(--coklat); 
+}
+
+/* ===== HEADER ===== */
+header { 
+    background: linear-gradient(135deg, var(--krem), var(--emas)); 
+    color: var(--putih); 
+    text-align:center; 
+    padding:60px 20px; 
+}
+
+header h1 { 
+    font-size:3rem; 
+    margin-bottom:10px; 
+}
+
+header p { 
+    font-size:1.2rem; 
+}
+
+/* ===== NAVBAR ===== */
+nav { 
+    background-color: var(--coklat); 
+    display:flex; 
+    justify-content:center; 
+    align-items: center;
+    flex-wrap: wrap; /* ✅ Supaya tetap rapi kalau layar sempit */
+    gap: 15px;
+    padding:15px 10px; 
+}
+
+nav a { 
+    color: var(--putih); 
+    text-decoration:none; 
+    font-weight:bold; 
+    padding: 8px 15px;
+    transition:0.3s; 
+    white-space: nowrap; /* ✅ Supaya teks tidak turun ke bawah */
+}
+
+nav a:hover { 
+    color: var(--emas); 
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+}
+
+/* ===== MAIN ===== */
+main { 
+    max-width:1100px; 
+    margin:auto; 
+    padding:40px 20px; 
+}
+
+/* ===== OVERLAY SECTION ===== */
+.overlay-section {
+  position: relative;
+  background: url("yesus1.jpg") no-repeat center center / cover;
+  border-radius: 12px;
+  width: 100%;
+  min-height: 500px; 
+  padding: 80px 30px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  color: #fff;
+  text-align: center;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.overlay-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.45); 
+  border-radius: 12px;
+}
+
+.overlay-content {
+  position: relative;
+  z-index: 1; 
+  max-width: 800px;
+}
+
+.overlay-content h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.overlay-content p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+/* ===== FOOTER ===== */
+footer { 
+    background-color: var(--coklat); 
+    color: var(--putih); 
+    text-align:center; 
+    padding:20px 0; 
+}
+
+/* ===== RESPONSIF ===== */
+@media (max-width: 768px) {
+  header h1 {font-size:2rem;} 
+  header p {font-size:1rem;} 
+
+  .overlay-section {
+    padding: 50px 20px;
+    min-height: 400px;
+  }
+
+  .overlay-content h2 {
+    font-size: 2rem;
+  }
+
+  .overlay-content p {
+    font-size: 1rem;
+  }
+}
+</style>
+</head>
+<body>
+
+<header>
+    <h1>Selamat Datang di KatolikU</h1>
+    <img src="k.png" alt="tuhan yesus" width="420px" height="240px">
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="katolik.html">Katolik</a>
+    <a href="ortodoks.html">Ortodoks</a>
+    <a href="perbedaan.html">Perbedaan</a>
+    <a href="persamaan.html">Persamaan</a>
+</nav>
+
+<main>
+    <section id="overview" class="overlay-section">
+        <div class="overlay-content">
+            <h2>Overview</h2>
+            <p>
+                Katolik dan Ortodoks adalah cabang utama dari Kekristenan yang memiliki sejarah panjang 
+                dan pengaruh besar. Meskipun memiliki kesamaan dalam ajaran dasar, kedua tradisi ini juga 
+                memiliki perbedaan dalam praktik, liturgi, dan organisasi gereja.
+                <br><br>
+                Sejak awal kemunculannya lebih dari dua ribu tahun lalu, Kekristenan telah mengalami berbagai dinamika yang membentuk dua cabang utamanya: Katolik dan Ortodoks. Keduanya berakar dari Gereja perdana yang sama dan sama-sama beriman kepada Yesus Kristus, namun perbedaan pandangan teologis, tradisi, dan kepemimpinan akhirnya membawa keduanya ke arah perkembangan yang berbeda, terutama setelah Skisma Besar tahun 1054. Meskipun berbeda dalam struktur, liturgi, dan tata ibadah, Katolik dan Ortodoks tetap memiliki tujuan yang sama, yaitu memuliakan Allah dan menghadirkan kasih Kristus bagi dunia.
+            </p>
+        </div>
+    </section>   
+</main>
+
+<footer>
+    &copy; 2025 CheDev. Semua hak dilindungi.
+</footer>
+
+</body>
+</html>

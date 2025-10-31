@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Home - Katoliku</title>
+<link rel="icon" type="image/png" href="download.png">
+<style>
+:root {
+    --coklat:#341c09;
+    --putih: #FFFFFF;
+    --krem: #F5E6D3;
+    --emas: #D4A017;
+    --abu: #F5F5F5;
+}
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Body & Video */
+body, html {
+    height: 100%;
+    overflow: hidden;
+}
+
+.bg-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width:100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    filter: brightness(50%);
+}
+
+/* Overlay Content */
+.content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: var(--putih);
+}
+
+.content h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.content img {
+    width: 200px;
+    height: 260px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    margin-bottom: 20px;
+}
+
+/* Transparent Button */
+.content .btn {
+    padding: 12px 25px;
+    border: 2px solid var(--putih);
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--putih);
+    font-weight: bold;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.content .btn:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    border-color: var(--emas);
+}
+
+/* Responsif */
+@media(max-width:768px){
+    .content h1{font-size:2rem;}
+    .content img{width:150px;height:200px;}
+}
+</style>
+</head>
+<body>
+
+<video class="bg-video" autoplay muted loop playsinline>
+    <source src="background.webm" type="video/webm" />
+    <source src="tuhan2.mp4" type="video/mp4" />
+</video>
+
+<div class="content">
+    <h1>Brukha Haba’ah le KatolikU</h1>
+    <img src="download.png" alt="Gambar Yesus">
+    <br>
+    <a href="home.html" class="btn">Continue</a>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ortodoks - Katolik vs Ortodoks</title>
+  <link rel="icon" type="image/png" href="download.png" />
+  <style>
+ :root{
+  --coklat:#341c09; --putih:#FFFFFF; --emas:#D4A017; --abu:#F5F5F5 ;
+  --thumb-size:72px;
+}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',Tahoma, Geneva, Verdana, sans-serif;}
+body{background:var(--abu);color:var(--coklat);}
+
+/* ====== JUDUL ATAS ====== */
+.header-title {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--coklat);
+  padding: 20px 0;
+}
+.header-title button {
+  background: var(--coklat);
+  border: 2px solid var(--emas);
+  padding: 15px 50px;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #000;
+  border-radius: 50px;
+  cursor: default;
+}
+
+/* ====== NAVBAR ====== */
+nav{background:var(--coklat);display:flex;justify-content:center;padding:15px 0;}
+nav a{color:var(--putih);text-decoration:none;margin:0 20px;font-weight:bold;transition:0.2s;}
+nav a:hover{color:var(--emas);}
+
+/* ====== MAIN ====== */
+main{max-width:1100px;margin:auto;padding:28px 20px;}
+
+/* overlay utama */
+.overlay-section{
+  position:relative;
+  border-radius:12px;
+  width:100%;
+  min-height:420px;
+  padding:60px 20px;
+  margin-bottom:16px;
+  box-shadow:0 4px 15px rgba(0,0,0,0.1);
+  color:#fff;
+  text-align:center;
+  overflow:hidden;
+  display:flex;align-items:center;justify-content:center;
+  background: no-repeat center/cover;
+}
+
+.overlay-section::before{
+  content:"";
+  position:absolute;inset:0;background:rgba(0,0,0,0.45);border-radius:12px;
+}
+
+.overlay-content{position:relative;z-index:1;max-width:800px;}
+.overlay-content h2{font-size:2.1rem;margin-bottom:12px;}
+.overlay-content p{font-size:1.05rem;line-height:1.6;}
+
+/* grid tombol gambar */
+.controls {
+  display:grid;
+  grid-template-columns: repeat(auto-fill, minmax(var(--thumb-size), 1fr));
+  gap:10px;
+  margin-top:12px;
+  align-items:center;
+}
+
+.img-btn{
+  width:var(--thumb-size);
+  height:var(--thumb-size);
+  border-radius:8px;
+  border:2px solid transparent;
+  overflow:hidden;
+  cursor:pointer;
+  background-size:cover;
+  background-position:center;
+  box-shadow:0 2px 6px rgba(0,0,0,0.15);
+  transition: transform .12s, border-color .12s;
+  display:inline-block;
+}
+.img-btn:hover{ transform: scale(1.04); }
+.img-btn.active{ border-color: var(--emas); transform: scale(1.06); }
+
+.controls-wrap{
+  margin: 10px 0 28px 0;
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+}
+
+@media (max-width:768px){
+  .overlay-section{min-height:320px;padding:40px 16px;}
+  .overlay-content h2{font-size:1.6rem;}
+  :root{ --thumb-size:56px; }
+}
+
+footer{background:var(--coklat);color:var(--putih);text-align:center;padding:16px 0;margin-top:12px;}
+</style>
+</head>
+<body>
+
+<!-- 🔝 Bagian Atas: Judul -->
+<div class="header-title">
+  <button>Ortodoks</button>
+</div>
+
+<!-- 🔗 Navigasi -->
+<nav>
+  <a href="index.html">Home</a>
+  <a href="katolik.html">Katolik</a>
+  <a href="perbedaan.html">Perbedaan</a>
+  <a href="persamaan.html">Persamaan</a>
+  <a href="home.html">View</a>
+</nav>
+
+<main>
+  <section class="overlay-section" id="hero">
+    <div class="overlay-content">
+      <h2 id="hero-title">Gereja Katolik</h2>
+      <p id="hero-text">
+        Gereja Katolik adalah cabang utama Kekristenan yang dipimpin oleh Paus di Roma. Katolik menekankan kesatuan dengan Paus, Sakramen, dan tradisi gereja yang telah berkembang selama lebih dari 2000 tahun.
+      </p>
+    </div>
+  </section>
+
+  <div class="controls-wrap" aria-label="Galeri gambar latar">
+    <small>Tentang : Katolik</small>
+    <div class="controls" id="controls"></div>
+  </div>
+</main>
+
+<footer>
+  &copy; 2025 CheDev. Semua hak dilindungi.
+</footer>
+
+<script>
+// ✅ Array objek: setiap gambar punya caption & teks berbeda
+const gallery = [
+  { src: "or1.jpg", title: "Pengertian", text: "Gereja Ortodoks adalah salah satu cabang utama Kekristenan yang mempertahankan tradisi, ajaran, dan tata cara ibadah dari gereja perdana sejak zaman para rasul. Kata “Ortodoks” berasal dari bahasa Yunani orthos yang berarti “benar” dan doxa yang berarti “ajaran” atau “pujian”, sehingga Gereja Ortodoks dapat diartikan sebagai “ajaran yang benar”. Gereja ini sangat menekankan kesetiaan pada ajaran asli gereja awal, liturgi yang mendalam, serta kehidupan rohani yang penuh dengan doa, ikon, dan sakramen." },
+  { src: "or2.jpeg", title: "Asal-usul Gereja Ortodoks (±30–1054 M)", text: "Gereja Ortodoks berakar langsung dari pelayanan Yesus Kristus dan para rasul-Nya. Setelah kebangkitan Kristus, para rasul menyebarkan Injil ke berbagai wilayah Kekaisaran Romawi termasuk Asia Kecil, Yunani, dan Timur Tengah. Gereja-gereja awal di kota-kota seperti Konstantinopel, Antiokhia, Aleksandria, dan Yerusalem menjadi pusat penyebaran iman Kristen Timur. Pada abad-abad pertama, gereja Timur dan Barat masih bersatu, namun memiliki perbedaan budaya, bahasa, dan teologi yang perlahan berkembang." },
+  { src: "or3.jpeg", title: "Perpecahan Besar (Skisma Timur-Barat, 1054 M)", text: "Pada tahun 1054 terjadilah Skisma Timur-Barat, yaitu perpecahan besar antara Gereja Barat (Katolik Roma) dan Gereja Timur (Ortodoks). Penyebab utamanya adalah perbedaan ajaran seperti penambahan kata Filioque dalam Syahadat oleh Gereja Barat tanpa persetujuan Konsili Ekumenis, serta perdebatan mengenai otoritas Paus. Sejak saat itu, Gereja Ortodoks berjalan terpisah dan mempertahankan struktur kolegial tanpa satu pemimpin tunggal seperti Paus, tetapi dipimpin oleh para Patriark dan Sinode." },
+  { src: "or4.jpeg", title: "Cara Ibadah dalam Gereja Ortodoks", text: "Ibadah utama Gereja Ortodoks disebut Divine Liturgy atau Liturgi Ilahi yang sangat khusyuk dan penuh simbol. Liturgi biasanya dilakukan pada hari Minggu sebagai peringatan kebangkitan Kristus, serta pada hari-hari raya besar lainnya. Urutan liturgi mencakup doa pembukaan, pembacaan Kitab Suci, homili, Doa Syafaat, Liturgi Ekaristi, dan penerimaan Komuni Suci. Liturgi Ortodoks dipenuhi dengan nyanyian pujian, doa dalam bahasa liturgis, prosesi, serta penggunaan ikon yang dipercaya menjadi jendela menuju surga." },
+  { src: "or5.jpeg", title: "Sakramen dan Kehidupan Rohani", text: "Gereja Ortodoks mengakui tujuh sakramen utama yaitu Baptisan, Krisma (Pengurapan Kudus), Ekaristi, Tobat, Perkawinan, Penahbisan Imam, dan Pengurapan Orang Sakit. Melalui sakramen-sakramen ini umat mengalami anugerah Allah secara nyata dalam hidup mereka. Selain itu, kehidupan rohani umat Ortodoks juga diperkaya melalui doa harian, puasa, ziarah, penghormatan terhadap para santo dan santa, serta perayaan hari raya liturgis seperti Paskah (kebangkitan Kristus) dan Natal." },
+  { src: "or6.jpeg", title: "Pemimpin Gereja Ortodoks", text: "Struktur kepemimpinan Gereja Ortodoks bersifat kolegial, artinya tidak ada satu pemimpin tertinggi seperti Paus. Pimpinan tertinggi di setiap gereja nasional disebut Patriark, seperti Patriark Konstantinopel, Patriark Moskow, dan Patriark Antiokhia. Semua Patriark dianggap setara dan bersatu dalam iman, sementara Patriark Ekumenis Konstantinopel diakui sebagai “yang pertama di antara yang sederajat” (primus inter pares)." },
+  { src: "or7.jpeg", title: "Kitab Suci dan Tradisi", text: "Gereja Ortodoks menerima Alkitab yang sama dengan Gereja Katolik, termasuk kitab-kitab Deuterokanonika. Namun, Ortodoks sangat menekankan bahwa Kitab Suci harus dipahami dalam terang Tradisi Suci, yaitu ajaran lisan, konsili ekumenis, tulisan para Bapa Gereja, dan liturgi yang diwariskan dari gereja perdana. Bagi Ortodoks, Kitab Suci dan Tradisi adalah dua sumber iman yang tidak dapat dipisahkan." },
+  { src: "or8.jpeg", title: "Puasa dan Disiplin Rohani", text: "Puasa memiliki tempat penting dalam kehidupan umat Ortodoks karena dianggap sebagai cara untuk menundukkan hawa nafsu, bertobat, dan semakin dekat dengan Allah. Puasa dilakukan beberapa kali dalam setahun, termasuk masa Pra-Paskah selama 40 hari, Puasa Natal, Puasa Apostolik, dan Puasa Dormition. Selama masa puasa, umat menahan diri dari makanan tertentu seperti daging, susu, dan terkadang minyak atau anggur, sambil meningkatkan doa dan karya kasih." },
+  { src: "or9.jpeg", title: "Hari Raya Khas Gereja Ortodoks", text: "Gereja Ortodoks memiliki sejumlah hari raya besar yang tidak dirayakan atau tidak sebesar di Gereja Katolik, antara lain Theophany (6 Januari) yang memperingati pembaptisan Yesus di Sungai Yordan, Meeting of the Lord (2 Februari) yang mengenang Yesus dipersembahkan di Bait Allah, Annunciation (25 Maret) sebagai kabar sukacita kepada Maria, Exaltation of the Holy Cross (14 September) untuk mengenang penemuan dan peninggian Salib Suci, Protection of Theotokos (1 Oktober) sebagai peringatan perlindungan Bunda Maria atas umat beriman, Entry of Theotokos into the Temple (21 November) saat Maria kecil dibawa ke Bait Allah, Nativity of Theotokos (8 September) hari kelahiran Bunda Maria, Dormition of Theotokos (15 Agustus) atau tidur sucinya Maria, serta Translasi Relikui Santo Nikolaus (9 Mei) yang memperingati pemindahan relikui sang santo pelindung, semuanya mencerminkan spiritualitas Timur yang mendalam dan devosi kuat pada Maria, para santo, dan misteri ilahi." },
+  { src: "or10.jpeg", title: "Konsili Ekumenis dalam Gereja Ortodoks", text: "Konsili Ekumenis (dari bahasa Yunani oikoumenē = 'seluruh dunia yang berpenghuni') adalah pertemuan resmi seluruh para uskup Gereja dari seluruh dunia yang diadakan untuk membahas dan memutuskan persoalan-persoalan penting mengenai iman, ajaran, dan disiplin gereja. Konsili ini dipandang sebagai sarana Roh Kudus untuk mengarahkan Gereja kepada kebenaran ilahi dan menjaga kemurnian iman Kristen.Dalam Gereja Ortodoks, otoritas tertinggi dalam menetapkan doktrin bukan berada pada satu orang (misalnya Paus), melainkan pada keputusan bersama dari para uskup dalam konsili ini. Maka, hasilnya bersifat mengikat bagi seluruh Gereja jika diterima secara universal (receptio oleh umat dan para uskup)." },
+  { src: "or11.jpeg", title: "Struktur Gereja Lokal dalam Ortodoks", text: "Gereja Ortodoks tidak dipimpin oleh satu pemimpin tunggal seperti Paus di Katolik, melainkan terdiri dari banyak Gereja lokal yang mandiri (autocephalous), masing-masing dipimpin oleh para uskupnya sendiri, namun tetap bersatu dalam iman, sakramen, dan tradisi apostolik. Setiap gereja lokal beroperasi secara otonom, tetapi mereka saling mengakui satu sama lain sebagai bagian dari Gereja yang satu, kudus, katolik (universal), dan apostolik." },
+  { src: "or12.jpeg", title: "Ikon dalam Gereja Ortodoks", text: "Ikon dalam Gereja Ortodoks adalah lukisan religius datar (biasanya di atas kayu) yang menggambarkan Yesus Kristus, Perawan Maria (Theotokos), para malaikat, para rasul, santo-santa, dan peristiwa penting dalam sejarah keselamatan. Lukisan ini tidak dibuat secara bebas seperti karya seni biasa, tetapi mengikuti aturan dan simbolisme rohani yang sangat ketat – misalnya: wajah yang tenang tanpa ekspresi duniawi, latar belakang berwarna emas melambangkan surga, dan cahaya ilahi yang terpancar dari dalam tokoh, bukan dari luar." },
+  { src: "or13.jpeg", title: "Ritus Ortodoks",text:"Dalam Gereja Ortodoks, tanda salib dilakukan dengan menyentuh dahi, dada, bahu kanan, lalu kiri, sambil mengucapkan kalimat yang sama.Arah kanan ke kiri melambangkan berkat yang turun dari Allah kepada manusia.Umat Ortodoks menyatukan tiga jari pertama sebagai lambang Tritunggal Mahakudus,dan melipat dua jari lainnya untuk dua kodrat Kristus.Tanda salib bagi Ortodoks adalah doa dan berkat, sering disertai membungkuk atau bersujud ringan, tanda kerendahan hati dan penghormatan kepada Allah."},
+]
+
+// elemen
+const controls = document.getElementById('controls');
+const hero = document.getElementById('hero');
+const heroTitle = document.getElementById('hero-title');
+const heroText = document.getElementById('hero-text');
+
+// generate tombol
+gallery.forEach((item, idx) => {
+  const btn = document.createElement('button');
+  btn.type = 'button';
+  btn.className = 'img-btn';
+  btn.style.backgroundImage = `url("${item.src}")`;
+  btn.setAttribute('aria-label', item.title);
+
+  btn.addEventListener('click', () => {
+    hero.style.backgroundImage = `url("${item.src}")`;
+    heroTitle.textContent = item.title;
+    heroText.textContent = item.text;
+    document.querySelectorAll('.img-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+  });
+
+  controls.appendChild(btn);
+});
+
+// default
+if (controls.firstChild) controls.firstChild.click();
+</script>
+
+</body>
+</html>

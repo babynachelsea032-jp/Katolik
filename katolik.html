@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Katolik - Katolik vs Ortodoks</title>
+<link rel="icon" type="image/png" href="download.png"/>
+<style>
+:root{
+  --coklat:#341c09; --putih:#FFFFFF; --emas:#D4A017; --abu:#F5F5F5 ;
+  --thumb-size:72px;
+}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',Tahoma, Geneva, Verdana, sans-serif;}
+body{background:var(--abu);color:var(--coklat);}
+
+/* ====== JUDUL ATAS ====== */
+.header-title {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--coklat);
+  padding: 20px 0;
+}
+.header-title button {
+  background: var(--coklat);
+  border: 2px solid var(--emas);
+  padding: 15px 50px;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #000;
+  border-radius: 50px;
+  cursor: default;
+}
+
+/* ====== NAVBAR ====== */
+nav{background:var(--coklat);display:flex;justify-content:center;padding:15px 0;}
+nav a{color:var(--putih);text-decoration:none;margin:0 20px;font-weight:bold;transition:0.2s;}
+nav a:hover{color:var(--emas);}
+
+/* ====== MAIN ====== */
+main{max-width:1100px;margin:auto;padding:28px 20px;}
+
+/* overlay utama */
+.overlay-section{
+  position:relative;
+  border-radius:12px;
+  width:100%;
+  min-height:420px;
+  padding:60px 20px;
+  margin-bottom:16px;
+  box-shadow:0 4px 15px rgba(0,0,0,0.1);
+  color:#fff;
+  text-align:center;
+  overflow:hidden;
+  display:flex;align-items:center;justify-content:center;
+  background: no-repeat center/cover;
+}
+
+.overlay-section::before{
+  content:"";
+  position:absolute;inset:0;background:rgba(0,0,0,0.45);border-radius:12px;
+}
+
+.overlay-content{position:relative;z-index:1;max-width:800px;}
+.overlay-content h2{font-size:2.1rem;margin-bottom:12px;}
+.overlay-content p{font-size:1.05rem;line-height:1.6;}
+
+/* grid tombol gambar */
+.controls {
+  display:grid;
+  grid-template-columns: repeat(auto-fill, minmax(var(--thumb-size), 1fr));
+  gap:10px;
+  margin-top:12px;
+  align-items:center;
+}
+
+.img-btn{
+  width:var(--thumb-size);
+  height:var(--thumb-size);
+  border-radius:8px;
+  border:2px solid transparent;
+  overflow:hidden;
+  cursor:pointer;
+  background-size:cover;
+  background-position:center;
+  box-shadow:0 2px 6px rgba(0,0,0,0.15);
+  transition: transform .12s, border-color .12s;
+  display:inline-block;
+}
+.img-btn:hover{ transform: scale(1.04); }
+.img-btn.active{ border-color: var(--emas); transform: scale(1.06); }
+
+.controls-wrap{
+  margin: 10px 0 28px 0;
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+}
+
+@media (max-width:768px){
+  .overlay-section{min-height:320px;padding:40px 16px;}
+  .overlay-content h2{font-size:1.6rem;}
+  :root{ --thumb-size:56px; }
+}
+
+footer{background:var(--coklat);color:var(--putih);text-align:center;padding:16px 0;margin-top:12px;}
+</style>
+</head>
+<body>
+
+<!-- 🔝 Bagian Atas: Judul -->
+<div class="header-title">
+  <button>Katolik</button>
+</div>
+
+<!-- 🔗 Navigasi -->
+<nav>
+  <a href="index.html">Home</a>
+  <a href="ortodoks.html">Ortodoks</a>
+  <a href="perbedaan.html">Perbedaan</a>
+  <a href="persamaan.html">Persamaan</a>
+  <a href="home.html">View</a>
+</nav>
+
+<main>
+  <section class="overlay-section" id="hero">
+    <div class="overlay-content">
+      <h2 id="hero-title">Gereja Katolik</h2>
+      <p id="hero-text">
+        Gereja Katolik adalah cabang utama Kekristenan yang dipimpin oleh Paus di Roma. Katolik menekankan kesatuan dengan Paus, Sakramen, dan tradisi gereja yang telah berkembang selama lebih dari 2000 tahun.
+      </p>
+    </div>
+  </section>
+
+  <div class="controls-wrap" aria-label="Galeri gambar latar">
+    <small>Tentang : Katolik</small>
+    <div class="controls" id="controls"></div>
+  </div>
+</main>
+
+<footer>
+  &copy; 2025 CheDev. Semua hak dilindungi.
+</footer>
+
+<script>
+// ✅ Array objek: setiap gambar punya caption & teks berbeda
+const gallery = [
+ { src: "yesus111.jpeg", title: "Pengertian", text: "Gereja Katolik adalah komunitas umat Kristen terbesar di dunia yang mengakui otoritas Paus di Roma sebagai penerus Santo Petrus, rasul yang dipandang sebagai pemimpin pertama Gereja oleh Yesus Kristus. Kata Katolik berasal dari bahasa Yunani katholikós (καθολικός) yang berarti universal atau menyeluruh. Gereja Katolik meyakini dirinya sebagai gereja yang satu, kudus, katolik (universal), dan apostolik sebagaimana diikrarkan dalam Syahadat Nicea (Credo). Secara sederhana, Gereja Katolik merupakan komunitas umat Kristiani yang tetap berpegang pada tradisi apostolik, sakramen, ajaran resmi Gereja, dan kepemimpinan Paus." },
+  { src: "yesus2.jpeg", title: "Asal-Usul (±30–313 M) – Masa Gereja Perdana", text: "Gereja Katolik berakar langsung dari pelayanan Yesus Kristus dan para rasul-Nya sekitar tahun 30 M. Setelah wafat dan kebangkitan Yesus, para rasul menyebarkan Injil ke seluruh Kekaisaran Romawi, dan Petrus, salah satu rasul terkemuka, diyakini menjadi uskup pertama Roma. Dari sinilah lahir tahta kepausan. Pada masa ini umat Kristen sering dianiaya oleh pemerintah Romawi karena menolak menyembah dewa-dewi kekaisaran. Tokoh penting pada masa ini antara lain Santo Petrus dan Paulus sebagai pemimpin gereja awal dan martir di Roma serta para Bapa Gereja seperti Ignatius dari Antiokhia dan Ireneus." },
+  { src: "yesus3.jpeg", title: "Gereja & Kekaisaran (313–1054) – Masa Konsolidasi dan Kejayaan", text: "Tahun 313 M Kaisar Konstantinus Agung mengeluarkan Edik Milan yang melegalkan Kekristenan, dan pada tahun 380 M Kekristenan menjadi agama resmi Kekaisaran Romawi. Gereja berkembang pesat, membentuk struktur hierarki seperti paus, uskup, dan imam, menyusun kanon Alkitab, serta merumuskan doktrin penting melalui konsili ekumenis seperti Nicea dan Konstantinopel. Masa ini ditandai dengan lahirnya sakramen-sakramen, pembangunan basilika megah, serta pembentukan biara dan ordo religius." },
+  { src: "yesus4.jpeg", title: "Skisma Timur-Barat (1054) – Perpecahan Besar", text: "Tahun 1054 Gereja Kristen terpecah menjadi dua yaitu Gereja Katolik Roma yang dipimpin Paus di Roma dan Gereja Ortodoks Timur yang dipimpin Patriark Konstantinopel. Perpecahan ini disebut Skisma Besar (Great Schism), yang disebabkan oleh perselisihan teologis seperti perdebatan tentang Filioque dalam Syahadat dan perebutan otoritas antara Paus Roma dan Patriark Timur." },
+  { src: "yesus5.jpeg", title: "Reformasi dan Kontra-Reformasi (1517–1648)", text: "Pada abad ke-16 Martin Luther memprotes penyalahgunaan wewenang Gereja yang memicu Reformasi Protestan. Akibatnya banyak gereja baru terbentuk di luar Katolik seperti Lutheran, Calvinis, dan Anglikan. Gereja Katolik menanggapi dengan mengadakan Konsili Trente (1545–1563) yang memperbarui doktrin, disiplin, dan moral dalam gerakan yang disebut Kontra-Reformasi." },
+  { src: "yesus6.jpeg", title: "Gereja Katolik Modern (1648–sekarang)", text: "Gereja terus beradaptasi dengan perubahan zaman seperti masa pencerahan, revolusi, dan modernitas. Tahun 1962–1965 diselenggarakan Konsili Vatikan II yang membawa pembaruan besar seperti penggunaan bahasa lokal dalam misa, dialog antaragama, serta keterbukaan terhadap dunia modern. Hingga kini Gereja Katolik memiliki lebih dari 1,3 miliar umat di seluruh dunia." },
+  { src: "yesus7.jpeg", title: "Cara Beribadah dalam Gereja Katolik", text: "Ibadah utama umat Katolik disebut Misa atau Perayaan Ekaristi yang merupakan pertemuan umat untuk memuji Allah, mendengarkan sabda-Nya, dan merayakan pengorbanan Yesus. Urutan utamanya meliputi Tanda Salib dan Doa Pembuka di mana umat menandai diri sambil memohon pengampunan, Liturgi Sabda yang berisi pembacaan Kitab Suci dan homili (khutbah), Liturgi Ekaristi yang menjadi bagian terpenting karena roti dan anggur dikonsekrir menjadi Tubuh dan Darah Kristus, Komuni Kudus di mana umat menerima hosti sebagai tanda persatuan dengan Kristus, serta Berkat dan Pengutusan sebagai penutup misa. Ibadah biasanya dilakukan di gereja setiap hari Minggu namun bisa juga pada hari-hari besar seperti hari raya atau peringatan orang kudus." },
+  { src: "yesus8.jpeg", title: "Hosti dalam Gereja Katolik", text: "Hosti adalah roti tak beragi yang digunakan dalam perayaan Ekaristi dan saat konsekrasi dalam misa hosti dipercaya berubah secara rohani menjadi Tubuh Kristus sesuai sabda Yesus dalam Perjamuan Terakhir “Inilah Tubuh-Ku yang diserahkan bagimu” (Luk 22:19). Umat yang sudah dibaptis dan berada dalam keadaan rahmat boleh menerima hosti sebagai tanda persatuan yang sangat penting antara dirinya dengan Kristus." },
+  { src: "yesus9.jpeg", title: "Pemimpin dalam Gereja Katolik", text: "Struktur kepemimpinan Gereja Katolik bersifat hierarkis dan sangat teratur di mana Paus menjadi pemimpin tertinggi Gereja sedunia sekaligus penerus Rasul Petrus dengan pusat kepemimpinan di Vatikan, Roma. Di bawah Paus ada Kardinal sebagai pembantu utama yang juga memilih Paus baru saat tahta kosong, kemudian Uskup yang memimpin wilayah keuskupan, Pastor atau Imam yang memimpin misa di paroki, memberikan sakramen, serta membimbing umat, dan Diakon yang membantu imam dalam pelayanan liturgi dan sosial." },
+  { src: "yesus10.jpeg", title: "Ajaran dan Kehidupan Umat Katolik", text: "Kehidupan umat Katolik tidak hanya berpusat pada misa mingguan tetapi juga dijalankan melalui tujuh sakramen yaitu Baptis, Krisma, Ekaristi, Tobat, Perkawinan, Imamat, dan Pengurapan Orang Sakit, serta melalui doa harian seperti Doa Bapa Kami, Salam Maria, Rosario, dan doa pribadi. Selain itu umat juga merayakan hari-hari raya penting seperti Natal (kelahiran Yesus), Paskah (kebangkitan Yesus), dan Pentakosta, serta melakukan perbuatan kasih dengan membantu sesama, pelayanan sosial, dan hidup sesuai ajaran Kristus." },
+  { src: "yesus11.jpeg", title: "Kitab Suci Agama Katolik", text: "Gereja Katolik meyakini bahwa Alkitab terdiri dari 73 kitab, yaitu 46 kitab Perjanjian Lama dan 27 kitab Perjanjian Baru. Salah satu ciri khas Alkitab Katolik dibandingkan dengan Alkitab Protestan adalah adanya kitab-kitab Deuterokanonika, yaitu tujuh kitab tambahan yang tidak terdapat dalam Alkitab Protestan.Istilah Deuterokanonika berasal dari bahasa Yunani deutero yang berarti kedua dan kanon yang berarti daftar kitab suci. Artinya, kitab-kitab ini diakui sebagai bagian dari kanon Kitab Suci oleh Gereja Katolik, meskipun pengakuannya dilakukan setelah kitab-kitab lain." },
+  { src: "yesus12.jpeg", title: "Puasa dalam Agama Katolik", text: "Puasa dalam agama Katolik adalah tindakan rohani untuk mengendalikan diri, bertobat, dan mendekatkan diri kepada Allah dengan cara menahan diri dari makan, minum, atau hal-hal tertentu dalam jangka waktu tertentu. Puasa tidak hanya soal tidak makan, tetapi juga tentang melatih kesederhanaan, menguatkan iman, dan menunjukkan kasih kepada sesama.Puasa biasanya dilakukan pada masa-masa khusus, terutama selama Masa Prapaskah, yaitu 40 hari sebelum Hari Paskah, untuk mengenangkan pengorbanan Yesus Kristus yang berpuasa selama 40 hari di padang gurun." },
+  { src: "yesus112.jpeg", title:"Ritus Katolik",text:"Dalam Gereja Katolik, tanda salib dibuat dengan menyentuh dahi, dada, bahu kiri, lalu kanan, sambil mengucapkan, “Dalam nama Bapa, dan Putra, dan Roh Kudus. Amin.”Gerakan dari kiri ke kanan melambangkan perjalanan dari kegelapan menuju terang Kristus.Umat Katolik biasanya memakai telapak tangan terbuka sebagai lambang lima luka Yesus.Tanda salib menjadi pengakuan iman kepada Allah Tritunggal serta pengingat akan baptisan dan penebusan Kristus, dilakukan di awal dan akhir doa atau saat menerima berkat."},
+] 
+
+// elemen
+const controls = document.getElementById('controls');
+const hero = document.getElementById('hero');
+const heroTitle = document.getElementById('hero-title');
+const heroText = document.getElementById('hero-text');
+
+// generate tombol
+gallery.forEach((item, idx) => {
+  const btn = document.createElement('button');
+  btn.type = 'button';
+  btn.className = 'img-btn';
+  btn.style.backgroundImage = `url("${item.src}")`;
+  btn.setAttribute('aria-label', item.title);
+
+  btn.addEventListener('click', () => {
+    hero.style.backgroundImage = `url("${item.src}")`;
+    heroTitle.textContent = item.title;
+    heroText.textContent = item.text;
+    document.querySelectorAll('.img-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+  });
+
+  controls.appendChild(btn);
+});
+
+// default
+if (controls.firstChild) controls.firstChild.click();
+</script>
+
+</body>
+</html>
